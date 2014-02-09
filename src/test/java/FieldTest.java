@@ -8,8 +8,8 @@ public class FieldTest {
 
     @Test
     public void testExampleField() throws Exception {
-
-        FieldParser p = new FieldParser(new CommonTokenStream(new FieldLexer(new ANTLRInputStream(getClass().getResourceAsStream("/example.field")))));
+        FieldLexer l = new FieldLexer(new ANTLRInputStream(getClass().getResourceAsStream("/example.field")));
+        FieldParser p = new FieldParser(new CommonTokenStream(l));
         p.addErrorListener(new BaseErrorListener() {
             @Override
             public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
@@ -17,6 +17,5 @@ public class FieldTest {
             }
         });
         p.field();
-
     }
 }
