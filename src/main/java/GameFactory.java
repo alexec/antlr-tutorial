@@ -48,8 +48,6 @@ public class GameFactory {
             public void exitPoints(FieldParser.PointsContext ctx) {
                 points.put(ctx.treasure.getText(), Integer.parseInt(ctx.value.getText()));
             }
-
-
         });
         p.field();
 

@@ -8,6 +8,5 @@ public class App {
         Game game = new GameFactory().createGame(App.class.getResourceAsStream("/example.field"));
 
         game.play();
-
     }
 }
